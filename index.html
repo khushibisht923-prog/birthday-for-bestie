@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday Dimple 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #f8c8dc,
+        #ead7ff,
+        #ffe6f0
+      );
+      color: #5b315d;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .top-hearts {
+      font-size: 35px;
+      letter-spacing: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 75px);
+      margin: 20px 0 5px;
+      color: #d94f87;
+      text-shadow: 2px 3px 10px rgba(255,255,255,0.8);
+    }
+
+    h2 {
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: normal;
+      margin-bottom: 35px;
+    }
+
+    .intro {
+      background: rgba(255,255,255,0.78);
+      padding: 40px 25px;
+      border-radius: 35px;
+      box-shadow: 0 15px 45px rgba(100,50,100,0.18);
+      border: 3px solid rgba(255,105,160,0.25);
+    }
+
+    .intro p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .little-hearts {
+      font-size: 25px;
+      letter-spacing: 5px;
+      margin: 15px 0;
+    }
+
+    button {
+      border: none;
+      background: linear-gradient(135deg, #ff5f9e, #d66cff);
+      color: white;
+      padding: 17px 32px;
+      border-radius: 50px;
+      font-size: 19px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 8px 25px rgba(217,108,255,0.35);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #letter {
+      display: none;
+      margin-top: 40px;
+      text-align: left;
+      background: rgba(255,255,255,0.94);
+      padding: 40px 35px;
+      border-radius: 30px;
+      box-shadow: 0 15px 45px rgba(100,50,100,0.2);
+      border: 4px solid #ffb3d1;
+      animation: appear 1s ease;
+      position: relative;
+    }
+
+    #letter::before,
+    #letter::after {
+      content: "💗 💕 💖 💞 💓 💗 💕 💖 💞 💓 💗";
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    #letter::after {
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+
+    #letter h3 {
+      text-align: center;
+      color: #d94f87;
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    #letter p {
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .ending {
+      text-align: center;
+      font-size: 25px !important;
+      color: #d94f87;
+      font-weight: bold;
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding: 45px 14px;
+      }
+
+      #letter {
+        padding: 30px 20px;
+      }
+
+      #letter p {
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .top-hearts {
+        font-size: 25px;
+        letter-spacing: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="top-hearts">
+      💗 💕 💖 💞 💓 💗 💕 💖
+    </div>
+
+    <h1>Happy Birthday Dimple! 🎂</h1>
+
+    <h2>To My Pretty Piece of Heart 💗</h2>
+
+    <div class="little-hearts">
+      🩷 💗 💕 💖 💞 💓 💘 💝 💟
+    </div>
+
+    <div class="intro">
+
+      <p>
+        💗 Some things are easier to say when they're written down... 💗
+      </p>
+
+      <p>
+        So I made this little corner of the internet just for you. 🥹💕
+      </p>
+
+      <div class="little-hearts">
+        💕 💗 💖 💞 💓 💕 💗 💖
+      </div>
+
+      <button onclick="openLetter()">
+        💌💗 Read My Letter 💗💌
+      </button>
+
+      <div id="letter">
+
+        <h3>
+          💗💌 For Dimple, With Love 💌💗
+        </h3>
+
+        <p>
+          💗 Happy birthday Dimple. 🎂💕
+        </p>
+
+        <p>
+          I know we are close in distance but jitne ghar paas hai
+          utne hi door hai. 💗
+        </p>
+
+        <p>
+          I know I have not been the best friend you deserved and
+          I know I haven't done much for you and I'm really sorry.
+          You deserve much better. 💕💗
+        </p>
+
+        <p>
+          But now it's finally that turn of life jisme hum dono ke
+          raaste ab alag ho jayenge. Life mein dono busy bhi ho jayenge,
+          apne apne doston mein reh kar ek dusre ko shayad itna yaad
+          bhi na karein. 💔💗
+        </p>
+
+        <p>
+          So I wanna say ki jab tu ye site kholke mera letter padhe,
+          jab bhi tu achhi post mein chali jaaye, jab bhi tu ye letter
+          khole, to ek baar mujhe text zaroor kare. 💌💕
+        </p>
+
+        <p>
+          I know main humesha tere liye available kabhi nahi rahi
+          and I regret it everyday. 🥺💗
+        </p>
+
+        <p>
+          I know tu chahti thi ki main tere birthday pe aau,
+          hum mile. I know. And it's all my fault. 💔
+        </p>
+
+        <p>
+          But now I think this would be the last year jahan hum itni
+          baatein kar rahe honge, kyuki uske baad to sab busy hi ho jayenge. 💗
+        </p>
+
+        <p>
+          I just want you to know
+          <strong>ILY SOOOO MUCHHHH 💗💗💗💗💗</strong>
+        </p>
+
+        <p>
+          Humesha stay happy. 🥹💕
+          I love the smile on your face. 😊💗
+          May all your dukh dard fade away the more you shine. ✨💖
+        </p>
+
+        <p>
+          And I hope you find friends who actually treat you better,
+          friends who you actually deserve to be with. 💕🫶🏻
+        </p>
+
+        <p>
+          I won't hope for you to have a friend like me.
+          I hope ki tu bohot achha kare, bohot aage jaaye,
+          humesha khush rahe. 💗✨💗
+        </p>
+
+        <p>
+          Wishing you the happiest birthday,
+          my pretty piece of heart. 💕🎂🎀
+        </p>
+
+        <p class="ending">
+          💗 I LOVE YOU SO MUCH, DIMPLE 💗<br><br>
+          🩷 💕 HAPPY BIRTHDAY 💕 🩷<br><br>
+          💖 💞 💓 💗 💕 💖 💞 💓 💗 💕 💖
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="little-hearts">
+      💗 💕 💖 💞 💓 💗 💕 💖 💞 💓 💗
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const heartSymbols = [
+      "💗",
+      "💕",
+      "💖",
+      "💞",
+      "💓",
+      "💘",
+      "💝",
+      "💟",
+      "🩷",
+      "❤️",
+      "💜",
+      "🤍",
+      "🎀",
+      "✨"
+    ];
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.innerHTML =
+        heartSymbols[
+          Math.floor(Math.random() * heartSymbols.length)
+        ];
+
+      heart.style.left = Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (18 + Math.random() * 28) + "px";
+
+      heart.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+
+    // Hearts constantly floating in the background
+    setInterval(createHeart, 350);
+
+
+    function openLetter() {
+
+      document.getElementById("letter").style.display = "block";
+
+      // BIG HEART EXPLOSION 💗💕💖
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+          createHeart();
+        }, i * 30);
+      }
+
+      // Scroll gently to the letter
+      setTimeout(() => {
+        document.getElementById("letter").scrollIntoView({
+          behavior: "smooth"
+        });
+      }, 300);
+    }
+
+  </script>
+
+</body>
+</html>
