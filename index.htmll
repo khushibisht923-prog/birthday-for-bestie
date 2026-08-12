@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Dimple 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#090511;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,80,150,.15),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(180,80,255,.15),transparent 30%);
+    pointer-events:none;
+    z-index:-2;
+}
+
+/* STARS */
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    color:#fff;
+    opacity:.7;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.3)}
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:rgba(10,5,18,.65);
+    backdrop-filter:blur(15px);
+    z-index:100;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav a{
+    color:#ffd5e8;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff6fa5;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 50px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.small{
+    color:#ff8fba;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:13px;
+}
+
+.hero h1{
+    font-family:'Caveat',cursive;
+    font-size:clamp(70px,14vw,150px);
+    color:#ff8fba;
+    line-height:.9;
+    margin:20px 0;
+    text-shadow:
+    0 0 20px rgba(255,100,160,.5),
+    0 0 60px rgba(255,100,160,.25);
+}
+
+.hero h2{
+    font-size:clamp(20px,4vw,32px);
+    font-weight:300;
+}
+
+.hero p{
+    margin:25px auto;
+    max-width:600px;
+    color:#cfc4d3;
+    line-height:1.8;
+}
+
+/* BUTTON */
+
+.btn{
+    border:1px solid rgba(255,255,255,.2);
+    background:linear-gradient(135deg,#ff4f91,#a95cff);
+    color:white;
+    padding:15px 28px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:15px;
+    box-shadow:0 10px 30px rgba(255,70,150,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.04);
+    box-shadow:0 15px 40px rgba(255,70,150,.4);
+}
+
+/* SECTIONS */
+
+section{
+    min-height:100vh;
+    padding:120px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#ff79ac;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:'Caveat',cursive;
+    font-size:65px;
+    color:#ffd4e5;
+}
+
+/* LETTER */
+
+.letter-box{
+    max-width:850px;
+    margin:auto;
+    padding:50px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.025)
+    );
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 30px 80px rgba(0,0,0,.3);
+}
+
+.letter-box p{
+    color:#ddd2dc;
+    line-height:2;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+.letter-box .highlight{
+    color:#ff91b9;
+    font-size:22px;
+    text-align:center;
+    font-weight:600;
+}
+
+.signature{
+    text-align:right;
+    font-family:'Caveat',cursive;
+    color:#ff91b9;
+    font-size:35px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:35px 25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,105,160,.08);
+    border-color:rgba(255,120,170,.3);
+}
+
+.card .emoji{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    color:#ff9fc2;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#bfb4c0;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* MEMORY TIMELINE */
+
+.timeline{
+    max-width:750px;
+    margin:auto;
+}
+
+.memory{
+    padding:25px;
+    margin:25px 0;
+    border-left:3px solid #ff6fa5;
+    background:rgba(255,255,255,.04);
+    border-radius:0 20px 20px 0;
+}
+
+.memory span{
+    color:#ff77aa;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.memory h3{
+    margin:8px 0;
+}
+
+.memory p{
+    color:#bfb5c1;
+    line-height:1.7;
+}
+
+/* SECRET */
+
+.secret{
+    text-align:center;
+}
+
+.secret-box{
+    display:none;
+    margin:35px auto;
+    max-width:700px;
+    padding:45px;
+    border-radius:30px;
+    background:linear-gradient(135deg,rgba(255,80,150,.15),rgba(160,80,255,.15));
+    border:1px solid rgba(255,255,255,.15);
+    animation:appear 1s ease;
+}
+
+.secret-box h3{
+    font-family:'Caveat',cursive;
+    color:#ff8eb8;
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.secret-box p{
+    color:#ddd0dc;
+    line-height:1.8;
+}
+
+/* FINAL */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.final h2{
+    font-family:'Caveat',cursive;
+    font-size:clamp(60px,10vw,110px);
+    color:#ff83b2;
+}
+
+.final p{
+    color:#c9bdc8;
+    margin:20px auto 30px;
+    max-width:600px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    z-index:50;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    10%{opacity:1}
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+        gap:12px;
+        padding:14px 10px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    section{
+        padding:100px 15px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .letter-box{
+        padding:28px 20px;
+    }
+
+    .section-title h2{
+        font-size:50px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+
+<div class="stars" id="stars"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="#home">Home 💗</a>
+    <a href="#letter">Letter 💌</a>
+    <a href="#reasons">Why You 🫶</a>
+    <a href="#memories">Memories ✨</a>
+    <a href="#secret">Secret 🔐</a>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <div class="small">
+        a little corner of the internet made for
+    </div>
+
+    <h1>Dimple 💗</h1>
+
+    <h2>Happy Birthday, Pretty Piece of My Heart 🎂</h2>
+
+    <p>
+        I could have just sent you a birthday text...
+        but you're not just a normal person,
+        so you deserved something a little more special. 🥹
+    </p>
+
+    <a href="#letter">
+        <button class="btn">
+            💌 There's something I wrote for you
+        </button>
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section id="letter">
+
+<div class="section-title">
+    <span>from my heart</span>
+    <h2>A Letter For You 💌</h2>
+</div>
+
+<div class="letter-box">
+
+<p>
+💗 Happy birthday Dimple.
+</p>
+
+<p>
+I know we are close in distance but jitne ghar paas hai utne hi door hai.
+</p>
+
+<p>
+I know I have not been the best friend u deserved and I know I havent done
+much for u and im really sorry. You deserve much better. 💗
+</p>
+
+<p>
+But now its finally that turn of life jisme hum dono ke raaste ab alg ho
+jayenge. Life me dono busy bhi ho jayenge apne apne doston me reh kr ek
+dusre ko shyad itna yaad bhi na kre.
+</p>
+
+<p>
+So I wanna say ki jb tu ye site kholke mera letter padhe,
+jab bhi tu achi post me chali jaaye, jab hi tu ye letter khole
+to ek baar mujhe text zarrur kre. 💌
+</p>
+
+<p>
+I know me humesha tere liye available kabhi nahi rhi and I regret it everyday.
+</p>
+
+<p>
+I know u wanted ki me tere birthday pe aau, hum mile.
+I know and its all my fault. 💔
+</p>
+
+<p>
+But now I think this would be the last year ja hum itni baatein krre honge
+kyuki uske baad to sab busy he ho jayenge.
+</p>
+
+<p class="highlight">
+I just want you to know ILY SOOOO MUCHHHH 💗💗💗
+</p>
+
+<p>
+Humesha stay happy. I love the smile on your face. 🥹💗
+May all your dukh dard fade away the more u shine.
+</p>
+
+<p>
+And I hope u find friends who actually treat u better,
+friend who u actually deserve to be with. 🫶
+</p>
+
+<p>
+I wont hope for u to have a frnd like me.
+I hope ki tu bohot accha kre, bohot aage jaaye,
+humesha khush rahe.
+</p>
+
+<p>
+Wishing you happy birthday my pretty piece of heart.
+</p>
+
+<p class="highlight">
+Love you so much. 💗
+</p>
+
+<div class="signature">
+Forever rooting for you,<br>
+someone who loves you 🩷
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REASONS -->
+
+<section id="reasons">
+
+<div class="section-title">
+    <span>because you're you</span>
+    <h2>Why You're Special 🫶</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+    <div class="emoji">🥹</div>
+    <h3>Your Smile</h3>
+    <p>
+        I genuinely love seeing you happy.
+        Your smile deserves to stay forever.
+    </p>
+</div>
+
+<div class="card">
+    <div class="emoji">💗</div>
+    <h3>Your Heart</h3>
+    <p>
+        You care so deeply about people,
+        even when you don't realize how special that is.
+    </p>
+</div>
+
+<div class="card">
+    <div class="emoji">✨</div>
+    <h3>Your Future</h3>
+    <p>
+        I know you're going to go so far in life.
+        Please never stop believing in yourself.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+<div class="section-title">
+    <span>our little story</span>
+    <h2>Memories ✨</h2>
+</div>
+
+<div class="timeline">
+
+<div class="memory">
+    <span>CHAPTER 01 💗</span>
+    <h3>When We Became Us</h3>
+    <p>
+        Add your favourite memory here.
+        Something only you two would understand. 🥹
+    </p>
+</div>
+
+<div class="memory">
+    <span>CHAPTER 02 💕</span>
+    <h3>The Chaotic Era</h3>
+    <p>
+        Add an inside joke, a stupid moment,
+        or something that still makes you laugh.
+    </p>
+</div>
+
+<div class="memory">
+    <span>CHAPTER 03 💖</span>
+    <h3>Everything We Still Have Ahead</h3>
+    <p>
+        Different paths don't erase the memories
+        we've already made.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SECRET -->
+
+<section id="secret" class="secret">
+
+<div class="section-title">
+    <span>one last thing</span>
+    <h2>There's a Secret 💌</h2>
+</div>
+
+<button class="btn" onclick="revealSecret()">
+    🔐 Open Secret
+</button>
+
+<div class="secret-box" id="secretBox">
+
+<h3>Dimple... 💗</h3>
+
+<p>
+No matter how far life takes us,
+no matter how busy we become,
+and no matter how many new people
+enter our lives...
+</p>
+
+<p>
+I hope there will always be a tiny part of you
+that remembers this crazy chapter of us. 🥹
+</p>
+
+<p>
+Keep smiling.
+Keep shining.
+Keep becoming the person you're meant to be.
+✨💗✨
+</p>
+
+<p style="font-size:25px;">
+I LOVE YOUUUU 💗💕💖💞💓
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div>
+
+<h2>
+Happy Birthday,<br>
+Dimple 💗
+</h2>
+
+<p>
+May this new chapter of your life be softer,
+happier, brighter and full of people who truly
+appreciate you. ✨
+</p>
+
+<button class="btn" onclick="celebrate()">
+    🎉 One Last Surprise 🎉
+</button>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* CREATE STARS */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<100;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.innerHTML="✦";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.fontSize=(Math.random()*8+4)+"px";
+
+    star.style.animationDelay=Math.random()*3+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* FLOATING HEARTS */
+
+const hearts=[
+    "💗","💕","💖","💞",
+    "💓","💘","💝","🩷",
+    "❤️","💜","🤍","✨"
+];
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=
+        (15+Math.random()*30)+"px";
+
+    heart.style.animationDuration=
+        (4+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,500);
+
+
+/* SECRET */
+
+function revealSecret(){
+
+    const box=document.getElementById("secretBox");
+
+    box.style.display="block";
+
+    celebrate();
+}
+
+
+/* CONFETTI / HEART EXPLOSION */
+
+function celebrate(){
+
+    for(let i=0;i<120;i++){
+
+        setTimeout(()=>{
+
+            const heart=document.createElement("div");
+
+            heart.className="heart";
+
+            heart.innerHTML=
+                hearts[Math.floor(Math.random()*hearts.length)];
+
+            heart.style.left=
+                (45+Math.random()*10)+"vw";
+
+            heart.style.bottom=
+                (20+Math.random()*20)+"vh";
+
+            heart.style.fontSize=
+                (15+Math.random()*35)+"px";
+
+            heart.style.animationDuration=
+                (3+Math.random()*4)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },7000);
+
+        },i*15);
+    }
+}
+
+</script>
+
+</body>
+</html>
